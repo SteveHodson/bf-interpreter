@@ -21,7 +21,8 @@ func NewBrain(code string) *Brain {
 func main() {
 
 	// Sample Input
-	input := "+++>++++>[<+>-]"
+	// Equivalent of 3 + 4 and placing in the result in Brain.memory[0]
+	input := "+++>++++[<+>-]"
 
 	b := NewBrain(input)
 
