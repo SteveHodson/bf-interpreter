@@ -2,6 +2,11 @@
 I'm learning Golang so I thought I'd write an interpreter for a simple language as a starting project and BrainFuck being a simple Turing complete language makes an excellent choice.
 [BrainFuck on Wikipeadia](https://en.wikipedia.org/wiki/Brainfuck)
 I am updating the project in bits adding more and more language instructions.  The inclluded hello_world.b file is for future testing as the interpreter does not yet support all the instructions used in that program.
+## Usage
+Make sure you have Golang installed and on your path
+```
+go run main.go hello_world.b
+```
 
 ## Instructions Supported
 | Instruction | Command                                             |
