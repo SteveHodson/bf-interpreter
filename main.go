@@ -37,14 +37,14 @@ func main() {
 
 	b := NewBrain(input)
 
-	fmt.Println("Code:: ", b.code)
-	fmt.Println("Memory\t\t\tInstruction\tmem_pointer")
+	//fmt.Println("Code:: ", b.code)
+	//fmt.Println("Memory\t\t\tInstruction\tmem_pointer")
 
 	for b.ip < len(b.code) {
 		symbol := b.code[b.ip]
 		switch symbol {
 		case '.':
-			fmt.Println(b.memory[b.dp])
+			fmt.Println(string(b.memory[b.dp]))
 		case '+':
 			b.memory[b.dp]++
 		case '-':
@@ -82,7 +82,7 @@ func main() {
 				}
 			}
 		}
-		fmt.Printf("%v\t%v\t\t%v\n", b.memory[0:10], string(symbol), b.dp)
+		//fmt.Printf("%v\t%v\t\t%v\n", b.memory[0:10], string(symbol), b.dp)
 		b.ip++
 	}
 
