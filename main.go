@@ -2,25 +2,38 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
+	"os"
 )
 
 type Brain struct {
-	code   string
+	code   []byte
 	ip     int
 	memory [30000]int
 	dp     int
 }
 
-func NewBrain(code string) *Brain {
+func NewBrain(code []byte) *Brain {
 	return &Brain{
 		code: code,
 	}
+}
+
+func readCode() []byte {
+	fileName := os.Args[1]
+	code, err := ioutil.ReadFile(fileName)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error: %s\n", err)
+		os.Exit(-1)
+	}
+	return code
 }
 func main() {
 
 	// Sample Input
 	// Equivalent of 3 + 4 and placing in the result in Brain.memory[0]
-	input := "++.+++>++++[<+>-]"
+	//input := "++.+++>++++[<+>-]"
+	input := readCode()
 
 	b := NewBrain(input)
 
