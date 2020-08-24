@@ -4,8 +4,6 @@ import (
 	"fmt"
 )
 
-// https://play.golang.org/p/_FP0-Xh7T7K
-
 type Brain struct {
 	code   string
 	ip     int
@@ -22,7 +20,7 @@ func main() {
 
 	// Sample Input
 	// Equivalent of 3 + 4 and placing in the result in Brain.memory[0]
-	input := "+++>++++[<+>-]"
+	input := "++.+++>++++[<+>-]"
 
 	b := NewBrain(input)
 
@@ -32,6 +30,8 @@ func main() {
 	for b.ip < len(b.code) {
 		symbol := b.code[b.ip]
 		switch symbol {
+		case '.':
+			fmt.Println(b.memory[b.dp])
 		case '+':
 			b.memory[b.dp]++
 		case '-':
